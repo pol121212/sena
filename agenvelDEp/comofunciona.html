@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/comofunciona.css">
+    <title>Cómo Funciona - AgenVel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Loader Interactivo -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="brain-container">
+                <div class="brain">
+                    <div class="brain-lobe left-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-lobe right-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-stem"></div>
+                </div>
+                <div class="brain-pulse"></div>
+            </div>
+            
+            <div class="loading-text">
+                <h2>AgenVel</h2>
+                <p>Preparando una experiencia interactiva para ti</p>
+            </div>
+            
+            <div class="health-data">
+                <div class="data-item">
+                    <span class="data-label">Cargando proceso de agendación:</span>
+                    <span class="data-value" id="load-process">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Inicializando IA médica:</span>
+                    <span class="data-value" id="load-ai">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Preparando tutoriales:</span>
+                    <span class="data-value" id="load-tutorials">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Optimizando experiencia:</span>
+                    <span class="data-value" id="load-optimization">--</span>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Interactivo -->
+    <header id="main-header">
+        <a href="index.html" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="agendacion.html">Agendar Cita</a></li>
+                <li><a href="consultaia.html">Consulta IA</a></li>
+                <li><a href="comofunciona.html" class="active">Cómo funciona</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section Interactiva -->
+    <section class="how-it-works-hero">
+        <div class="hero-bg"></div>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Descubre Cómo Funciona AgenVel</h1>
+            <p>Te guiamos paso a paso en el proceso de agendación y te mostramos cómo nuestra inteligencia artificial puede ayudarte con consultas médicas preliminares de forma rápida y segura.</p>
+            
+            <div class="interactive-demo">
+                <div class="demo-card" data-step="1">
+                    <div class="demo-icon">👨‍⚕️</div>
+                    <div class="demo-text">Selecciona Especialista</div>
+                </div>
+                <div class="demo-card" data-step="2">
+                    <div class="demo-icon">📅</div>
+                    <div class="demo-text">Elige Fecha y Hora</div>
+                </div>
+                <div class="demo-card" data-step="3">
+                    <div class="demo-icon">🧠</div>
+                    <div class="demo-text">Consulta con IA</div>
+                </div>
+                <div class="demo-card" data-step="4">
+                    <div class="demo-icon">💳</div>
+                    <div class="demo-text">Confirma y Paga</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Agendación Interactivo -->
+    <section class="process-section">
+        <h2 class="section-title">Proceso de Agendación Paso a Paso</h2>
+        <p class="section-subtitle">Sigue estos simples pasos para agendar tu cita médica de forma rápida y segura</p>
+        
+        <div class="process-container">
+            <div class="process-timeline">
+                <!-- Paso 1 -->
+                <div class="process-step" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Selecciona tu Especialista
+                            <span class="step-toggle">+</span>
+                        </h3>
+                        <p class="step-description">Explora nuestra amplia red de profesionales de la salud y elige el especialista que mejor se adapte a tus necesidades.</p>
+                        <ul class="step-features">
+                            <li>Filtra por especialidad, disponibilidad y experiencia</li>
+                            <li>Revisa perfiles detallados con calificaciones y reseñas</li>
+                            <li>Compara precios y horarios disponibles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Paso 2 -->
+                <div class="process-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Elige Fecha y Hora
+                            <span class="step-toggle">+</span>
+                        </h3>
+                        <p class="step-description">Selecciona el momento que mejor se ajuste a tu agenda con nuestro calendario interactivo.</p>
+                        <ul class="step-features">
+                            <li>Visualiza disponibilidad en tiempo real</li>
+                            <li>Recibe recordatorios automáticos</li>
+                            <li>Posibilidad de reprogramar fácilmente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Paso 3 -->
+                <div class="process-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Completa tus Datos
+                            <span class="step-toggle">+</span>
+                        </h3>
+                        <p class="step-description">Proporciona la información necesaria para tu historial médico de forma segura y confidencial.</p>
+                        <ul class="step-features">
+                            <li>Formulario rápido y sencillo</li>
+                            <li>Datos protegidos con encriptación avanzada</li>
+                            <li>Posibilidad de guardar información para futuras citas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Paso 4 -->
+                <div class="process-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Confirma y Paga
+                            <span class="step-toggle">+</span>
+                        </h3>
+                        <p class="step-description">Revisa los detalles de tu cita y realiza el pago de forma segura a través de nuestra plataforma.</p>
+                        <ul class="step-features">
+                            <li>Múltiples métodos de pago disponibles</li>
+                            <li>Transacciones 100% seguras</li>
+                            <li>Recibo digital inmediato</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Paso 5 -->
+                <div class="process-step" data-step="5">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Asiste a tu Consulta
+                            <span class="step-toggle">+</span>
+                        </h3>
+                        <p class="step-description">Conecta con tu médico virtual M.A.V y/o acude a la clínica según tu preferencia.</p>
+                        <ul class="step-features">
+                            <li>Acceso fácil desde cualquier dispositivo</li>
+                            <li>Recordatorios previos a la cita</li>
+                            <li>Soporte técnico durante la consulta</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección IA Interactiva -->
+    <section class="ai-section">
+        <div class="ai-container">
+            <div class="ai-content">
+                <h2>Consulta Médica Preliminar con IA</h2>
+                <p>Nuestra inteligencia artificial avanzada te permite obtener orientación médica inicial de forma instantánea, las 24 horas del día, los 7 días de la semana.</p>
+                <p>La IA analiza tus síntomas y te proporciona información útil mientras esperas tu cita con el especialista.</p>
+                
+                <ul class="ai-features">
+                    <li>Análisis de síntomas con tecnología de vanguardia</li>
+                    <li>Recomendaciones personalizadas basadas en tu perfil</li>
+                    <li>Información médica verificada por profesionales</li>
+                    <li>Recordatorios de medicamentos y cuidados</li>
+                    <li>Seguimiento de tu estado de salud</li>
+                </ul>
+                
+                <a href="consultaia.html" class="btn">Probar Consulta IA</a>
+            </div>
+            
+            <div class="ai-visual">
+                <div class="ai-circle" id="ai-circle">
+                    <div class="ai-icon">🧠</div>
+                    <div class="ai-particles" id="ai-particles"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorial Interactivo -->
+    <section class="video-section">
+        <h2 class="section-title">Video Tutorial Completo</h2>
+        <p class="section-subtitle">Aprende a usar todas las funciones de AgenVel en menos de 5 minutos</p>
+        
+        <div class="video-container">
+            <div class="video-placeholder" id="video-trigger">
+                <div class="play-button"></div>
+            </div>
+            
+            <div class="video-info">
+                <h3>Guía Completa de AgenVel</h3>
+                <p>En este video te explicamos detalladamente cómo navegar por nuestra plataforma, agendar citas, utilizar la consulta IA y aprovechar al máximo todos los beneficios que ofrece AgenVel para el cuidado de tu salud.</p>
+                <p><strong>Duración:</strong> 2:30 minutos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Interactivos -->
+    <section class="benefits-section">
+        <h2 class="section-title">Beneficios de Usar AgenVel</h2>
+        <p class="section-subtitle">Descubre por qué miles de pacientes confían en nuestra plataforma</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⏱️</div>
+                <h3 class="benefit-title">Ahorra Tiempo</h3>
+                <p class="benefit-description">Agenda citas en minutos sin llamadas ni esperas. Nuestra plataforma te conecta directamente con especialistas disponibles.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3 class="benefit-title">Precios Transparentes</h3>
+                <p class="benefit-description">Conoce el costo de tu consulta antes de agendar. Sin sorpresas ni costos ocultos.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🏥</div>
+                <h3 class="benefit-title">Acceso a Especialistas</h3>
+                <p class="benefit-description">Conecta con médicos certificados de diversas especialidades desde la comodidad de tu hogar.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3 class="benefit-title">Seguridad y Privacidad</h3>
+                <p class="benefit-description">Tus datos médicos están protegidos con encriptación de última generación y cumplen con las normativas de privacidad.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📱</div>
+                <h3 class="benefit-title">Disponible 24/7</h3>
+                <p class="benefit-description">Agenda consultas y recibe orientación médica preliminar en cualquier momento, desde cualquier lugar.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🔄</div>
+                <h3 class="benefit-title">Flexibilidad Total</h3>
+                <p class="benefit-description">Cambia o cancela tus citas fácilmente según tus necesidades, sin complicaciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Interactivo -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>¿Listo para Comenzar?</h2>
+            <p>Únete a miles de pacientes que ya están cuidando su salud con AgenVel. Agenda tu primera cita o prueba nuestra consulta IA gratuita.</p>
+            
+            <div class="cta-buttons">
+                <a href="agendacion.html" class="btn">Agendar Mi Primera Cita</a>
+                <a href="consultaia.html" class="btn" style="background: rgba(255, 255, 255, 0.1);">Probar Consulta IA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Video -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <iframe class="modal-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AgenVel</h3>
+                <p>Tu salud en manos de la inteligencia artificial. Cuidamos de ti con tecnología de vanguardia.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comofunciona.html">Cómo funciona</a></li>
+                    <li><a href="agendacion.html">Agendar Cita</a></li>
+                    <li><a href="consultaia.html">Consulta IA</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@agenvel.com</li>
+                    <li>Teléfono: +1 234 567 890</li>
+                    <li>Dirección: Calle Salud 123, Ciudad</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AgenVel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/comofunciona.js"></script>
+</body>
+</html>

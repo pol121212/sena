@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita - AgenVel</title>
+    <link rel="stylesheet" href="css/agendacion.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="brain-container">
+                <div class="brain">
+                    <div class="brain-lobe left-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-lobe right-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-stem"></div>
+                </div>
+                <div class="brain-pulse"></div>
+            </div>
+            
+            <div class="loading-text">
+                <h2>AgenVel</h2>
+                <p>Conectando con especialistas médicos</p>
+            </div>
+            
+            <div class="health-data">
+                <div class="data-item">
+                    <span class="data-label">Cargando lista de médicos:</span>
+                    <span class="data-value" id="load-doctors">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Verificando disponibilidad:</span>
+                    <span class="data-value" id="load-availability">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Conectando con clínicas:</span>
+                    <span class="data-value" id="load-clinics">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Inicializando calendario:</span>
+                    <span class="data-value" id="load-calendar">--</span>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="agendacion.html" class="active">Agendar Cita</a></li>
+                <li><a href="consultaia.html">Consulta IA</a></li>
+                <li><a href="comofunciona.html">Cómo funciona</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section con Video de Fondo -->
+    <section class="appointment-hero">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline>
+                <!--video -->
+                <source src="assets/videos/agendar.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento video.
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Agenda con Nuestros Especialistas</h1>
+            <p>Selecciona tu médico preferido y agenda tu consulta virtual</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="specialty-filter">Especialidad:</label>
+                    <select id="specialty-filter">
+                        <option value="all">Todas las especialidades</option>
+                        <option value="medicina-general">Medicina General</option>
+                        <option value="pediatria">Pediatría</option>
+                        <option value="ginecologia">Ginecología</option>
+                        <option value="dermatologia">Dermatología</option>
+                        <option value="psicologia">Psicología</option>
+                        <option value="nutricion">Nutrición</option>
+                        <option value="cardiologia">Cardiología</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="availability-filter">Disponibilidad:</label>
+                    <select id="availability-filter">
+                        <option value="all">Cualquier horario</option>
+                        <option value="morning">Mañana (8:00 - 12:00)</option>
+                        <option value="afternoon">Tarde (14:00 - 18:00)</option>
+                        <option value="evening">Noche (18:00 - 21:00)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="experience-filter">Experiencia:</label>
+                    <select id="experience-filter">
+                        <option value="all">Cualquier experiencia</option>
+                        <option value="5">+5 años</option>
+                        <option value="10">+10 años</option>
+                        <option value="15">+15 años</option>
+                    </select>
+                </div>
+                <button class="btn" id="search-doctors">Buscar Médicos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Médicos -->
+    <section class="doctors-section">
+        <div class="container">
+            <h2 class="section-title">Médicos Disponibles</h2>
+            <p class="section-subtitle">Selecciona el especialista que prefieras para tu consulta virtual</p>
+            
+            <div class="doctors-grid" id="doctors-grid">
+                <!-- Los médicos se cargan dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de la Clínica -->
+    <section class="clinic-info">
+        <div class="container">
+            <div class="clinic-header">
+                <h2>En Asociación con Centro Medico La Nueva Eps </h2>
+                <div class="clinic-badge">⭐ Certificada por el Ministerio Colombiano de Salud</div>
+            </div>
+            <div class="clinic-details">
+                <div class="clinic-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Especialistas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Pacientes atendidos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Satisfacción</span>
+                    </div>
+                </div>
+                <div class="clinic-features">
+                    <h3>Nuestras Certificaciones</h3>
+                    <ul>
+                        <li>✅ Certificación ISO 9001:2015</li>
+                        <li>✅ Acreditación Nacional de Salud</li>
+                        <li>✅ Miembro de la Asociación Médica Internacional</li>
+                        <li>✅ Protocolos de Bioseguridad Certificados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Agendamiento -->
+    <div class="modal-overlay" id="booking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agendar Cita con <span id="modal-doctor-name"></span></h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="doctor-summary">
+                    <div class="doctor-avatar" id="modal-doctor-avatar"></div>
+                    <div class="doctor-info">
+                        <h4 id="modal-doctor-specialty"></h4>
+                        <p id="modal-doctor-experience"></p>
+                        <p id="modal-doctor-clinic"></p>
+                    </div>
+                </div>
+                
+                <div class="booking-steps">
+                    <div class="step-indicator">
+                        <div class="step active" data-step="1">
+                            <span>1</span>
+                            <p>Fecha</p>
+                        </div>
+                        <div class="step" data-step="2">
+                            <span>2</span>
+                            <p>Hora</p>
+                        </div>
+                        <div class="step" data-step="3">
+                            <span>3</span>
+                            <p>Confirmar</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 1: Fecha -->
+                    <div class="booking-step active" data-step="1">
+                        <h4>Selecciona una Fecha</h4>
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button id="prev-month">&lt;</button>
+                                <h5 id="current-month"></h5>
+                                <button id="next-month">&gt;</button>
+                            </div>
+                            <div class="calendar-grid" id="calendar-days">
+                                <!-- Días se generan con JS -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 2: Hora -->
+                    <div class="booking-step" data-step="2">
+                        <h4>Selecciona un Horario</h4>
+                        <div class="time-slots" id="time-slots">
+                            <!-- Horarios se generan con JS -->
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 3: Confirmación -->
+                    <div class="booking-step" data-step="3">
+                        <h4>Confirma Tu Cita</h4>
+                        <div class="appointment-summary">
+                            <div class="summary-item">
+                                <strong>Médico:</strong>
+                                <span id="summary-doctor"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Fecha:</strong>
+                                <span id="summary-date"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Hora:</strong>
+                                <span id="summary-time"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Precio:</strong>
+                                <span id="summary-price"></span>
+                            </div>
+                        </div>
+                        <div class="patient-form">
+                            <h5>Tus Datos</h5>
+                            <div class="form-grid">
+                                <input type="text" placeholder="Nombre completo" id="patient-name" required>
+                                <input type="email" placeholder="Email" id="patient-email" required>
+                                <input type="tel" placeholder="Teléfono" id="patient-phone" required>
+                                <input type="text" placeholder="tipo de documento" id="patient-age">
+                                <input type="text" placeholder="cedula" id="patient-age">
+                                
+                            </div>
+                            <textarea placeholder="Motivo de la consulta (opcional)" id="patient-reason"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="prev-step">Anterior</button>
+                <button class="btn" id="next-step">Siguiente</button>
+                <button class="btn btn-primary" id="confirm-booking" style="display: none;">Confirmar Cita</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AgenVel</h3>
+                <p>Tu salud en manos de la inteligencia artificial. Cuidamos de ti con tecnología de vanguardia.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comofunciona.html">Cómo funciona</a></li>
+                    <li><a href="agendacion.html">Agendar Cita</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: AgenVel911@gmail.com</li>
+                    <li>Teléfono: +1 234 567 890</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AgenVel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/agendacion.js"></script>
+</body>
+</html>

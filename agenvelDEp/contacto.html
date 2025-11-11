@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contacto.css">
+    <title>Contacto - AgenVel</title>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="brain-container">
+                <div class="brain">
+                    <div class="brain-lobe left-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-lobe right-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-stem"></div>
+                </div>
+                <div class="brain-pulse"></div>
+            </div>
+            
+            <div class="loading-text">
+                <h2>AgenVel</h2>
+                <p>Conectando con nuestro equipo</p>
+            </div>
+            
+            <div class="health-data">
+                <div class="data-item">
+                    <span class="data-label">Cargando información:</span>
+                    <span class="data-value" id="load-info">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Inicializando formulario:</span>
+                    <span class="data-value" id="load-form">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Conectando con servidores:</span>
+                    <span class="data-value" id="load-servers">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Preparando video:</span>
+                    <span class="data-value" id="load-video">--</span>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="comofunciona.html">Cómo funciona</a></li>
+                <li><a href="agendacion.html">Agendar Cita</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Section con Video -->
+    <section class="contact-hero">
+        <video class="video-background" autoplay muted loop>
+            <source src="assets/videos/contacto.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento video.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h1>Conecta con Nuestro Equipo</h1>
+            <p>Estamos aquí para ayudarte. Contáctanos para cualquier consulta sobre nuestros servicios médicos, soporte técnico o información general.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">24/7</span>
+                    <span class="hero-stat-label">Soporte Disponible</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">15 min</span>
+                    <span class="hero-stat-label">Tiempo Respuesta</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">98%</span>
+                    <span class="hero-stat-label">Satisfacción</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Información de Contacto</h2>
+                <p>No dudes en ponerte en contacto con nosotros. Nuestro equipo está disponible para responder a tus preguntas y proporcionarte la ayuda que necesitas.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Dirección</h4>
+                            <p>Calle 5 #13, Ciudad Cartago</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p>+1 234 567 890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>AgenVel911@gmailcom</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 8:00 - 20:00<br>Sábados: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link">f</a>
+                    <a href="#" class="social-link">t</a>
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">ig</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Envíanos un Mensaje</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="consulta">Consulta Médica</option>
+                            <option value="tecnico">Soporte Técnico</option>
+                            <option value="general">Información General</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="map-container">
+            <!-- Mapa de ejemplo - En un caso real, aquí iría un iframe de Google Maps -->
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a4a, #4a00e0); display: flex; align-items: center; justify-content: center;">
+                <div class="map-overlay">
+                    <div class="map-content">
+                        <h3>Nuestra Ubicación</h3>
+                        <p>Calle 5 #13, Ciudad Cartago</p>
+                        <button class="btn" style="margin-top: 15px;">Ver en Google Maps</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Resolvemos tus dudas más comunes sobre nuestros servicios y atención</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cómo puedo agendar una cita médica?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Puedes agendar una cita médica a través de nuestra plataforma web en la sección "Agendar Cita", llamando a nuestro centro de atención al cliente, o enviando un mensaje a través de este formulario de contacto.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Qué especialidades médicas ofrecen?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Contamos con especialistas en medicina general, pediatría, ginecología, dermatología, psicología, nutrición, cardiología y muchas otras áreas. Puedes consultar la lista completa en nuestra sección de agendación.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Ofrecen consultas virtuales?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, la mayoría de nuestros especialistas ofrecen consultas virtuales a través de videollamada. Al agendar tu cita, podrás seleccionar esta modalidad si está disponible para el médico de tu preferencia.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cuál es el costo de una consulta?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>El costo de las consultas varía según la especialidad y el médico. Los precios oscilan entre $30 y $50 dólares por consulta. Puedes ver el precio exacto al seleccionar un médico en nuestra plataforma.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Qué métodos de pago aceptan?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), transferencias bancarias y PayPal. Todos los pagos se procesan de forma segura a través de nuestra plataforma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AgenVel</h3>
+                <p>Tu salud en manos de la inteligencia artificial. Cuidamos de ti con tecnología de vanguardia.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comofunciona.html">Cómo funciona</a></li>
+                    <li><a href="agendacion.html">Agendar Cita</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@agenvel.com</li>
+                    <li>Teléfono: +1 234 567 890</li>
+                    <li>Dirección: Calle Salud 123, Ciudad</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 AgenVel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/contacto.js"></script>
+</body>
+</html>

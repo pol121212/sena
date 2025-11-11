@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgenVel - Tu Asistente Médico Inteligente </title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- loader de código -->
+<div class="loader-container" id="loader">
+    <div class="loader-content">
+        <div class="brain-container">
+            <div class="brain">
+                <div class="brain-lobe left-lobe">
+                    <div class="brain-texture"></div>
+                </div>
+                <div class="brain-lobe right-lobe">
+                    <div class="brain-texture"></div>
+                </div>
+                <div class="brain-stem"></div>
+            </div>
+            <div class="brain-pulse"></div>
+        </div>
+        
+        <div class="loading-text">
+            <h2>AgenVel</h2>
+            <p>Inicializando sistema de salud inteligente</p>
+        </div>
+        
+        <div class="health-data">
+            <div class="data-item">
+                <span class="data-label">Analizando ritmo cardíaco:</span>
+                <span class="data-value" id="heart-rate">--</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Monitoreando presión arterial:</span>
+                <span class="data-value" id="blood-pressure">--</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Evaluando patrones de sueño:</span>
+                <span class="data-value" id="sleep-pattern">--</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Procesando datos médicos:</span>
+                <span class="data-value" id="medical-data">--</span>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+    </div>
+</div>
+
+    <!-- Header -->
+    <header>
+        <!-- Botón de Google Translate -->
+        <div id="google_translate_element" class="google-translate-btn"></div>
+        <a href="#" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Nuestros Servicios</a></li>
+                <li><a href="#ia-medica">Consulta IA</a></li>
+                <li><a href="comofunciona.html">Cómo funciona</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <!-- Reemplaza la sección Hero actual por esta versión con video -->
+<section class="hero" id="inicio">
+    <!-- Video de fondo -->
+    <div class="video-background">
+        <video autoplay muted loop id="hero-video">
+            <source src="assets/videos/nuevaeps.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <!-- Overlay para mejorar legibilidad del texto -->
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="hero-bg"></div>
+    <div class="stars" id="stars"></div>
+    <div class="electricity" id="electricity"></div>
+    
+    <div class="hero-content">
+        <h1>Tu salud Nuestra Prioridad</h1>
+        <p>AgenVel combina inteligencia artificial avanzada con profesionales de la salud para ofrecerte la mejor experiencia en agendación de citas médicas y diagnóstico preliminar.</p>
+        <a href="agendacion.html" class="btn">Agendar Cita Ahora</a>
+        
+        <!-- Controles opcionales para el video -->
+        <div class="video-controls">
+            <button id="play-pause" class="control-btn">⏸️</button>
+            <button id="mute-unmute" class="control-btn">🔊</button>
+        </div>
+    </div>
+</section>
+
+    <!-- Carrusel -->
+    <div class="carousel-section">
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <div class="slide-image" style="background-image: url(assets/images/carrusel1.jpg);"></div>
+                <div class="carousel-content">
+                    <h2>Consulta Médica Virtual</h2>
+                    <p>Conecta con médicos certificados desde la comodidad de tu hogar</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/carrusel2.jpg');"></div>
+                <div class="carousel-content">
+                    <h2>Diagnóstico con IA</h2>
+                    <p>Nuestra inteligencia artificial analiza tus síntomas para ofrecerte orientación médica preliminar</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/carrusel3.jpg');"></div>
+                <div class="carousel-content">
+                    <h2>Recordatorios Inteligentes</h2>
+                    <p>Nunca olvides una cita médica con nuestro sistema de recordatorios personalizados</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-image" style="background-image: url('assets/images/carrusel4.jpg');"></div>
+                <div class="carousel-content">
+                    <h2>Atención Personalizada</h2>
+                    <p>Cada paciente recibe cuidado individualizado y seguimiento continuo</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+        <div class="carousel-dots"></div>
+    </div>
+</div>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <p>Descubre todas las formas en que AgenVel puede ayudarte a cuidar de tu salud</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>Agendamiento Inteligente</h3>
+                <p>Encuentra y reserva citas con especialistas basado en tus necesidades y disponibilidad.</p>
+                <a href="#" class="btn">Más información</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>Asistente Médico IA</h3>
+                <p>Obtén orientación médica preliminar instantánea con nuestra IA especializada.</p>
+                <a href="#ia-medica" class="btn">Más información</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Seguimiento de Salud</h3>
+                <p>Monitorea tu historial médico y recibe recomendaciones personalizadas.</p>
+                <a href="#" class="btn">Más información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IA Médica -->
+    <section id="ia-medica" class="ai-section">
+        <div class="section-title">
+            <h2>Asistente Médico con IA</h2>
+            <p>Nuestra inteligencia artificial está entrenada con millones de casos médicos para ofrecerte la mejor orientación</p>
+        </div>
+        <div class="ai-medic">
+            <div class="ai-content">
+                <h3>Diagnóstico Preliminar Avanzado</h3>
+                <p>Nuestra IA analiza tus síntomas, historial médico y factores de riesgo para ofrecerte una evaluación preliminar antes de tu cita con el especialista.</p>
+                <ul>
+                    <li>Análisis de síntomas con 95% de precisión</li>
+                    <li>Recomendaciones de especialistas según tu caso</li>
+                    <li>Alertas tempranas para condiciones de riesgo</li>
+                    <li>Integración con dispositivos wearables</li>
+                </ul>
+                <a href="consultaia.html" class="btn">Probar Asistente IA</a>
+            </div>
+            <div class="ai-visual">
+                <div class="ai-bot">
+                    <div class="bot-icon">🤖</div>
+                    <h3>AgenVel AI</h3>
+                    <p>Tu asistente médico personal</p>
+                </div>
+                <div class="electric-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="how-it-works">
+        <div class="section-title">
+            <h2>Cómo Funciona</h2>
+            <p>En solo 4 sencillos pasos puedes agendar tu cita médica y recibir orientación</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Regístrate</h3>
+                <p>Crea tu cuenta en AgenVel con tus datos básicos y buscaremos en tu historial médico.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Describe tus síntomas</h3>
+                <p>Puedes comunica tus síntomas a nuestra IA para recibir orientación preliminar.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Encuentra especialistas</h3>
+                <p>Nuestro sistema te recomendará los profesionales más adecuados para tu caso.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Agenda tu cita</h3>
+                <p>Selecciona el horario que mejor se adapte a tu disponibilidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="section-title">
+            <h2>Lo que Dicen Nuestros Usuarios</h2>
+            <p>Más de 100 pacientes confían en AgenVel para su  Agendacion y cuidado médico</p>
+        </div>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"La IA me ayudó a identificar que necesitaba ver a un cardiólogo. Resultó que tenía una condición que no había detectado antes. ¡Me salvó la vida!"</p>
+                <div class="client">
+                    <div class="client-img">M</div>
+                    <div class="client-info">
+                        <h4>María González</h4>
+                        <span>Paciente desde 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Como persona con movilidad reducida, AgenVel ha sido una bendición. Puedo tener consultas rapidas y agendar citas sin salir de casa."</p>
+                <div class="client">
+                    <div class="client-img">J</div>
+                    <div class="client-info">
+                        <h4>Javier Rodríguez</h4>
+                        <span>Paciente desde 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"El recordatorio inteligente me ha ayudado a no perderme mis citas de seguimiento. La integración con mi calendario es perfecta."</p>
+                <div class="client">
+                    <div class="client-img">A</div>
+                    <div class="client-info">
+                        <h4>Ana Martínez</h4>
+                        <span>Paciente desde 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>"Ya no tengo que esperar tanto tiempo para poder pedir una cita medica. Esta aplicacion me ha ayudado a agendar mas rapido!"</p>
+                <div class="client">
+                    <div class="client-img">I</div>
+                    <div class="client-info">
+                        <h4>Ivan Hoyos</h4>
+                        <span>Paciente desde 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Sección Blog de Salud -->
+<section id="blog" class="blog-section">
+    <div class="section-title">
+        <h2>Blog de Salud</h2>
+        <p>Mantente informado con los últimos consejos y noticias sobre salud y bienestar</p>
+    </div>
+    
+    <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="nutricion">Nutrición</button>
+        <button class="filter-btn" data-filter="ejercicio">Ejercicio</button>
+        <button class="filter-btn" data-filter="mental">Salud Mental</button>
+        <button class="filter-btn" data-filter="prevencion">Prevención</button>
+    </div>
+    
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Artículo 1 -->
+            <article class="blog-card" data-category="nutricion">
+                <div class="blog-image">
+                    <img src="assets/images/nutricion.jpg" alt="Alimentación saludable">
+                    <div class="blog-category nutricion">Nutrición</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">17 Feb 2025</span>
+                        <span class="blog-read-time">5 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">10 Alimentos Esenciales para tu Sistema Inmunológico</h3>
+                    <p class="blog-excerpt">Descubre los superalimentos que pueden fortalecer tus defensas naturales y mantenerte saludable durante todo el año.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">142</span>
+                            <span class="blog-comments">23</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="blog-card" data-category="ejercicio">
+                <div class="blog-image">
+                    <img src="assets/images/ejercicio.jpg" alt="Rutina de ejercicio">
+                    <div class="blog-category ejercicio">Ejercicio</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">12 Ene 2025</span>
+                        <span class="blog-read-time">7 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">Rutina de 15 Minutos para un Corazón Saludable</h3>
+                    <p class="blog-excerpt">Ejercicios cardiovasculares que puedes hacer en casa sin necesidad de equipamiento especial.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">89</span>
+                            <span class="blog-comments">15</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="blog-card" data-category="mental">
+                <div class="blog-image">
+                    <img src="assets/images/meditar.jpg" alt="Meditación y salud mental">
+                    <div class="blog-category mental">Salud Mental</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">10 Oct 2025</span>
+                        <span class="blog-read-time">6 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">Técnicas de Mindfulness para Reducir el Estrés</h3>
+                    <p class="blog-excerpt">Aprende prácticas simples de meditación que puedes incorporar en tu día a día para mejorar tu bienestar mental.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">203</span>
+                            <span class="blog-comments">34</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="blog-card" data-category="prevencion">
+                <div class="blog-image">
+                    <img src="assets/images/prevencion.jpg" alt="Chequeos médicos">
+                    <div class="blog-category prevencion">Prevención</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">8 Abr 2025</span>
+                        <span class="blog-read-time">4 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">Chequeos Médicos que No Debes Posponer</h3>
+                    <p class="blog-excerpt">Conoce los exámenes preventivos esenciales según tu edad y género para mantener una salud óptima.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">156</span>
+                            <span class="blog-comments">28</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="blog-card" data-category="nutricion">
+                <div class="blog-image">
+                    <img src="assets/images/hidratacio.jpg" alt="Hidratación saludable">
+                    <div class="blog-category nutricion">Nutrición</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">14 May 2025</span>
+                        <span class="blog-read-time">5 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">La Importancia de la Hidratación en la Salud Diaria</h3>
+                    <p class="blog-excerpt">Descubre cómo mantener una hidratación adecuada puede mejorar tu energía, concentración y salud general.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">98</span>
+                            <span class="blog-comments">12</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="blog-card" data-category="ejercicio">
+                <div class="blog-image">
+                    <img src="assets/images/postura.jpg" alt="Postura correcta">
+                    <div class="blog-category ejercicio">Ejercicio</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">1 Mar 2025</span>
+                        <span class="blog-read-time">8 min lectura</span>
+                    </div>
+                    <h3 class="blog-title">Corrige tu Postura: Ejercicios para el Dolor de Espalda</h3>
+                    <p class="blog-excerpt">Rutinas simples para combatir los efectos de estar sentado todo el día y mejorar tu postura corporal.</p>
+                    <div class="blog-footer">
+                        <a href="#" class="blog-link">Leer más</a>
+                        <div class="blog-stats">
+                            <span class="blog-likes">167</span>
+                            <span class="blog-comments">19</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <div class="blog-cta">
+        <a href="blog.html" class="btn">Ver Todos los Artículos</a>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AgenVel</h3>
+                <p>Tu salud en manos de la inteligencia artificial. Cuidamos de ti con tecnología de vanguardia.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#ia-medica">IA Médica</a></li>
+                    <li><a href="#como-funciona">Cómo funciona</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: AgenVel911@gmail.com</li>
+                    <li>Teléfono: +1 234 567 890</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 AgenVel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

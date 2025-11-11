@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Salud - AgenVel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="brain-container">
+                <div class="brain">
+                    <div class="brain-lobe left-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-lobe right-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-stem"></div>
+                </div>
+                <div class="brain-pulse"></div>
+            </div>
+            
+            <div class="loading-text">
+                <h2>AgenVel Blog</h2>
+                <p>Cargando contenido de salud y bienestar</p>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="agendacion.html">Agendar Cita</a></li>
+                <li><a href="consulta-ia.html">Consulta IA</a></li>
+                <li><a href="comofunciona.html">Cómo funciona</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Hero Blog -->
+    <section class="blog-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Blog de Salud y Bienestar</h1>
+            <p>Descubre los últimos consejos, investigaciones y tendencias en salud para mejorar tu calidad de vida</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Buscar artículos sobre...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Blog -->
+    <section class="blog-section">
+        <div class="section-title">
+            <h2>Artículos Destacados</h2>
+            <p>Explora nuestros contenidos más populares sobre salud, nutrición, ejercicio y bienestar mental</p>
+        </div>
+        
+        <div class="blog-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="nutricion">Nutrición</button>
+            <button class="filter-btn" data-filter="ejercicio">Ejercicio</button>
+            <button class="filter-btn" data-filter="mental">Salud Mental</button>
+            <button class="filter-btn" data-filter="prevencion">Prevención</button>
+            <button class="filter-btn" data-filter="video">Videos</button>
+        </div>
+        
+        <div class="blog-container">
+            <div class="blog-grid">
+                <!-- Artículo 1 -->
+                <article class="blog-card" data-category="nutricion">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Alimentación saludable">
+                        <div class="blog-category nutricion">Nutrición</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">17 Feb 2025</span>
+                            <span class="blog-read-time">5 min lectura</span>
+                        </div>
+                        <h3 class="blog-title">10 Alimentos Esenciales para tu Sistema Inmunológico</h3>
+                        <p class="blog-excerpt">Descubre los superalimentos que pueden fortalecer tus defensas naturales y mantenerte saludable durante todo el año.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Leer más</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 142</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="blog-card" data-category="ejercicio">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Rutina de ejercicio">
+                        <div class="blog-category ejercicio">Ejercicio</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">12 Ene 2025</span>
+                            <span class="blog-read-time">7 min lectura</span>
+                        </div>
+                        <h3 class="blog-title">Rutina de 15 Minutos para un Corazón Saludable</h3>
+                        <p class="blog-excerpt">Ejercicios cardiovasculares que puedes hacer en casa sin necesidad de equipamiento especial.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Leer más</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 89</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 15</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="blog-card" data-category="mental">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1220&q=80" alt="Meditación y salud mental">
+                        <div class="blog-category mental">Salud Mental</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Oct 2025</span>
+                            <span class="blog-read-time">6 min lectura</span>
+                        </div>
+                        <h3 class="blog-title">Técnicas de Mindfulness para Reducir el Estrés</h3>
+                        <p class="blog-excerpt">Aprende prácticas simples de meditación que puedes incorporar en tu día a día para mejorar tu bienestar mental.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Leer más</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 203</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 34</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="blog-card" data-category="prevencion">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Chequeos médicos">
+                        <div class="blog-category prevencion">Prevención</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">8 Abr 2025</span>
+                            <span class="blog-read-time">4 min lectura</span>
+                        </div>
+                        <h3 class="blog-title">Chequeos Médicos que No Debes Posponer</h3>
+                        <p class="blog-excerpt">Conoce los exámenes preventivos esenciales según tu edad y género para mantener una salud óptima.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Leer más</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 156</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 28</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 -->
+                <article class="blog-card" data-category="nutricion">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Hidratación saludable">
+                        <div class="blog-category nutricion">Nutrición</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">14 May 2025</span>
+                            <span class="blog-read-time">5 min lectura</span>
+                        </div>
+                        <h3 class="blog-title">La Importancia de la Hidratación en la Salud Diaria</h3>
+                        <p class="blog-excerpt">Descubre cómo mantener una hidratación adecuada puede mejorar tu energía, concentración y salud general.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Leer más</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 98</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 12</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 (Video) -->
+                <article class="blog-card" data-category="video">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ejercicios en casa">
+                        <div class="blog-category video">Video</div>
+                        <div class="video-play-btn" data-video="https://www.youtube.com/embed/GEj7Z-JfCbQ">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">22 Mar 2025</span>
+                            <span class="blog-read-time">8 min video</span>
+                        </div>
+                        <h3 class="blog-title">Rutina Completa de Ejercicios para Principiantes</h3>
+                        <p class="blog-excerpt">Aprende una rutina completa de ejercicios que puedes hacer en casa sin equipamiento especial. Ideal para quienes comienzan su viaje fitness.</p>
+                        <div class="blog-footer">
+                            <a href="#" class="blog-link">Ver video</a>
+                            <div class="blog-stats">
+                                <span class="blog-likes"><i class="fas fa-heart"></i> 245</span>
+                                <span class="blog-comments"><i class="fas fa-comment"></i> 42</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Sección de Videos Destacados -->
+    <section class="videos-section">
+        <div class="section-title">
+            <h2>Videos Destacados</h2>
+            <p>Contenido visual para complementar tu aprendizaje sobre salud y bienestar</p>
+        </div>
+        
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Rutina de ejercicio">
+                    <div class="video-play-btn" data-video="https://www.youtube.com/embed/GEj7Z-JfCbQ">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Rutina de Ejercicios para Principiantes</h3>
+                    <p class="video-description">Aprende una rutina completa de ejercicios que puedes hacer en casa sin equipamiento especial.</p>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Alimentación saludable">
+                    <div class="video-play-btn" data-video="https://www.youtube.com/embed/wD2F-V8_1-g">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Guía de Alimentación Saludable</h3>
+                    <p class="video-description">Descubre cómo planificar tus comidas para mantener una nutrición equilibrada y saludable.</p>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1220&q=80" alt="Meditación">
+                    <div class="video-play-btn" data-video="https://www.youtube.com/embed/inpok4MKVLM">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-content">
+                    <h3 class="video-title">Meditación Guiada para Principiantes</h3>
+                    <p class="video-description">Aprende técnicas de meditación para reducir el estrés y mejorar tu bienestar mental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h3>Suscríbete a Nuestro Newsletter</h3>
+            <p>Recibe los últimos artículos, consejos de salud y noticias directamente en tu correo electrónico.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                <button type="submit" class="btn">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Modal de Video -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container" id="video-container">
+                <!-- El iframe se insertará aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>AgenVel</h3>
+                <p>Tu salud en manos de la inteligencia artificial. Cuidamos de ti con tecnología de vanguardia.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="comofunciona.html">Cómo funciona</a></li>
+                    <li><a href="agendacion.html">Agendar Cita</a></li>
+                    <li><a href="consultaia.html">Consulta IA</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@agenvel.com</li>
+                    <li>Teléfono: +1 234 567 890</li>
+                    <li>Dirección: Calle Salud 123, Ciudad</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 AgenVel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/blog.js"></script>
+</body>
+</html>

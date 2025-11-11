@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta IA - AgenVel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/consultaia.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader-content">
+            <div class="brain-container">
+                <div class="brain">
+                    <div class="brain-lobe left-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-lobe right-lobe">
+                        <div class="brain-texture"></div>
+                    </div>
+                    <div class="brain-stem"></div>
+                </div>
+                <div class="brain-pulse"></div>
+            </div>
+            
+            <div class="loading-text">
+                <h2>M.A.V. - Asistente Médico Virtual</h2>
+                <p>Inicializando sistema de consulta médica inteligente</p>
+            </div>
+            
+            <div class="health-data">
+                <div class="data-item">
+                    <span class="data-label">Cargando modelo de IA:</span>
+                    <span class="data-value" id="load-model">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Verificando base de datos médica:</span>
+                    <span class="data-value" id="load-database">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Preparando interfaz de chat:</span>
+                    <span class="data-value" id="load-interface">--</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Optimizando respuestas:</span>
+                    <span class="data-value" id="load-optimization">--</span>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Agen<span>Vel</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="agendacion.html">Agendar Cita</a></li>
+                <li><a href="consulta-ia.html" class="active">Consulta IA</a></li>
+                <li><a href="comofunciona.html">Cómo funciona</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sesion.html" class="btn">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Sección de Chat IA a Pantalla Completa -->
+    <section class="ia-fullscreen-chat">
+        <div class="chat-bg"></div>
+        <div class="chat-header">
+            <!-- Video de fondo -->
+            <video autoplay muted loop class="header-video-bg">
+                <source src="assets/videos/latido.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="header-overlay"></div>
+            
+            <h1>Consulta con M.A.V.</h1>
+            <p>Asistente Médico Virtual de AgenVel. Analiza síntomas, recibe recomendaciones y prepara tu consulta con un especialista.</p>
+            
+            <div class="ai-stats">
+                <div class="ai-stat">
+                    <span class="ai-stat-number">24/7</span>
+                    <span class="ai-stat-label">Disponibilidad</span>
+                </div>
+                <div class="ai-stat">
+                    <span class="ai-stat-number">95%</span>
+                    <span class="ai-stat-label">Precisión</span>
+                </div>
+                <div class="ai-stat">
+                    <span class="ai-stat-number">5 seg</span>
+                    <span class="ai-stat-label">Tiempo Respuesta</span>
+                </div>
+                <div class="ai-stat">
+                    <span class="ai-stat-number">10k+</span>
+                    <span class="ai-stat-label">Consultas Diarias</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="chat-sidebar">
+                <h3>Consultas Rápidas</h3>
+                <ul class="chat-presets">
+                    <li class="active" data-preset="symptoms">
+                        <i class="fas fa-stethoscope"></i> Análisis de Síntomas
+                    </li>
+                    <li data-preset="medication">
+                        <i class="fas fa-pills"></i> Información de Medicamentos
+                    </li>
+                    <li data-preset="first-aid">
+                        <i class="fas fa-first-aid"></i> Primeros Auxilios
+                    </li>
+                    <li data-preset="nutrition">
+                        <i class="fas fa-apple-alt"></i> Consejos de Nutrición
+                    </li>
+                    <li data-preset="mental-health">
+                        <i class="fas fa-brain"></i> Salud Mental
+                    </li>
+                    <li data-preset="chronic">
+                        <i class="fas fa-heartbeat"></i> Enfermedades Crónicas
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="chat-main">
+                <div class="chat-history" id="chat-history">
+                    <div class="message ai-message">
+                        <div class="message-header">
+                            <div class="message-avatar ai-avatar">M.A.V.</div>
+                            <span>Asistente Médico Virtual</span>
+                        </div>
+                        ¡Hola! Soy M.A.V., tu Asistente Médico Virtual. Puedo ayudarte a analizar síntomas, proporcionar información sobre medicamentos, primeros auxilios y mucho más. ¿En qué puedo asistirte hoy?
+                        <div class="message-time" id="current-time"></div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <div class="chat-input-inner">
+                            <div class="chat-input-field">
+                                <textarea
+                                    id="chat-input"
+                                    name="chat-input"
+                                    placeholder="Describe tus síntomas o haz una pregunta..."
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                            <div class="chat-options">
+                                <div class="chat-buttons">
+                                    <button id="attach-file" title="Adjuntar archivo">
+                                        <i class="fas fa-paperclip"></i>
+                                    </button>
+                                    <button id="add-image" title="Agregar imagen">
+                                        <i class="fas fa-image"></i>
+                                    </button>
+                                    <button id="voice-input" title="Entrada de voz">
+                                        <i class="fas fa-microphone"></i>
+                                    </button>
+                                </div>
+                                <button class="send-button" id="send-message" title="Enviar mensaje">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quick-tags">
+                        <span>Dolor de cabeza</span>
+                        <span>Fiebre</span>
+                        <span>Problemas digestivos</span>
+                        <span>Ansiedad</span>
+                        <span>Alergias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/consultaia.js"></script>
+</body>
+</html>

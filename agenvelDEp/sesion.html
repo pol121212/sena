@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - AgenVel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/sesion.css">
+</head>
+<body>
+    <!-- Fondo animado con estrellas -->
+    <div class="stars-background" id="stars"></div>
+
+    <!-- Contenedor principal -->
+    <div class="auth-container">
+        <!-- Panel izquierdo (información) -->
+        <div class="info-panel">
+            <div class="floating-elements">
+                <div class="floating-element">🧠</div>
+                <div class="floating-element">💊</div>
+                <div class="floating-element">🏥</div>
+                <div class="floating-element">📱</div>
+            </div>
+            <div class="info-content">
+                <h1 class="info-title">Bienvenido a AgenVel</h1>
+                <p class="info-description">Tu salud en manos de la inteligencia artificial. Accede a consultas médicas virtuales, análisis de síntomas y mucho más.</p>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Consultas médicas 24/7</li>
+                    <li><i class="fas fa-check-circle"></i> Análisis de síntomas con IA</li>
+                    <li><i class="fas fa-check-circle"></i> Historial médico personalizado</li>
+                    <li><i class="fas fa-check-circle"></i> Recordatorios de medicación</li>
+                    <li><i class="fas fa-check-circle"></i> Resultados de análisis en línea</li>
+                </ul>
+                
+                <div class="testimonial">
+                    <p>"AgenVel ha revolucionado la forma en que cuido mi salud. ¡Increíble experiencia!"</p>
+                    <p class="testimonial-author">- María González</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Panel derecho (formulario) -->
+        <div class="form-panel">
+            <!-- Formulario de Inicio de Sesión -->
+            <div class="form-container login-form">
+                <div class="form-title">
+                    <div class="form-main-title">Inicia sesión en tu</div>
+                    <div class="form-subtitle">AGENVEL</div>
+                </div>
+                
+                <form class="form" id="loginForm">
+                    <div class="input-group">
+                        <input type="email" class="input-field" placeholder="Correo electrónico" required>
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" class="input-field" placeholder="Contraseña" required>
+                        <i class="fas fa-lock input-icon"></i>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Recordarme
+                        </label>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Iniciar Sesión</button>
+                    
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-text">o continúa con</div>
+                        <div class="divider-line"></div>
+                    </div>
+                    
+                    <div class="social-login">
+                        <div class="social-btn">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social-btn">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="switch-form">
+                        ¿No tienes una cuenta? 
+                        <a href="#" class="switch-link" id="showRegister">Regístrate</a>
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Formulario de Registro -->
+            <div class="form-container register-form">
+                <div class="form-title">
+                    <div class="form-main-title">Crea tu cuenta en</div>
+                    <div class="form-subtitle">AGENVEL</div>
+                </div>
+                
+                <form class="form" id="registerForm">
+                    <div class="name-fields">
+                        <div class="input-group">
+                            <input type="text" class="input-field" placeholder="Nombre" required>
+                            <i class="fas fa-user input-icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="input-field" placeholder="Apellido" required>
+                            <i class="fas fa-user input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="email" class="input-field" placeholder="Correo electrónico" required>
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" class="input-field" placeholder="Contraseña" required>
+                        <i class="fas fa-lock input-icon"></i>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" class="input-field" placeholder="Confirmar contraseña" required>
+                        <i class="fas fa-lock input-icon"></i>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" required> Acepto los términos y condiciones
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Crear Cuenta</button>
+                    
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <div class="divider-text">o continúa con</div>
+                        <div class="divider-line"></div>
+                    </div>
+                    
+                    <div class="social-login">
+                        <div class="social-btn">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social-btn">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="switch-form">
+                        ¿Ya tienes una cuenta? 
+                        <a href="#" class="switch-link" id="showLogin">Inicia Sesión</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/sesion.js"></script>
+</body>
+</html>
